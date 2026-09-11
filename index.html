@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bite Café | Fresh Coffee & Delicious Food</title>
+
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #2d2118;
+    background: #fffaf5;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+}
+
+.logo span {
+    margin-right: 7px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e6b17e;
+}
+
+.nav-btn {
+    background: #c47a44;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(30, 20, 14, 0.65),
+            rgba(30, 20, 14, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    padding: 100px 30px 60px;
+    color: white;
+}
+
+.small-heading,
+.section-label {
+    color: #c47a44;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-size: clamp(50px, 7vw, 85px);
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #e6b17e;
+}
+
+.hero-text {
+    max-width: 600px;
+    font-size: 17px;
+    color: #eee;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #c47a44;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    background: #a96335;
+}
+
+.secondary-btn {
+    border: 1px solid white;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: #2d2118;
+}
+
+
+/* ================= COMMON ================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+}
+
+.section-heading h2 {
+    font-size: 45px;
+    margin: 12px 0;
+    color: #2d2118;
+}
+
+.section-heading p:last-child {
+    color: #766b63;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-size: 50px;
+    line-height: 1.1;
+    margin: 15px 0 25px;
+}
+
+.about-content h2 span {
+    color: #c47a44;
+}
+
+.about-content > p {
+    color: #766b63;
+    margin-bottom: 15px;
+}
+
+.features {
+    margin-top: 30px;
+}
+
+.feature {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.feature > span {
+    font-size: 30px;
+}
+
+.feature h3 {
+    margin-bottom: 3px;
+}
+
+.feature p {
+    color: #766b63;
+    font-size: 14px;
+}
+
+
+/* ================= MENU ================= */
+
+.menu {
+    background: #f5ede4;
+    max-width: none;
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #eadfd3;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.menu-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.menu-card h3 {
+    font-size: 23px;
+}
+
+.menu-card p {
+    color: #766b63;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.price {
+    color: #c47a44;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* ================= WHY US ================= */
+
+.why-us {
+    padding: 100px 30px;
+    background: #2d2118;
+    color: white;
+}
+
+.why-us .section-heading h2 {
+    color: white;
+}
+
+.why-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.why-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.why-card span {
+    font-size: 40px;
+}
+
+.why-card h3 {
+    margin: 15px 0 8px;
+    font-size: 22px;
+}
+
+.why-card p {
+    color: #c9bfb7;
+    font-size: 14px;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+    padding: 100px 30px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(30, 20, 14, 0.75),
+            rgba(30, 20, 14, 0.75)
+        ),
+        url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: 50px;
+    margin: 10px auto;
+}
+
+.cta p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #eee;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-info h2 {
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+.contact-info > p {
+    color: #766b63;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-item span {
+    font-size: 25px;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+}
+
+.contact-item p {
+    color: #766b63;
+    font-size: 14px;
+}
+
+.contact-form {
+    background: #f5ede4;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-form h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d6c7ba;
+    background: transparent;
+    padding: 15px 5px;
+    margin-bottom: 15px;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    margin-top: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #1d1510;
+    color: white;
+    padding: 50px 30px 20px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-content h2 {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #b9aea5;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+}
+
+.social a {
+    color: #c47a44;
+    font-size: 14px;
+}
+
+.copyright {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #3b3029;
+    text-align: center;
+    color: #8f857e;
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-grid,
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-grid,
+    .why-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content h2,
+    .contact-info h2,
+    .cta h2 {
+        font-size: 38px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+}</style>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <span>☕</span> Brew & Bite
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="nav-btn">Book a Table</a>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-heading">WELCOME TO BREW & BITE</p>
+
+            <h1>
+                Coffee, Conversations
+                <span>& Good Vibes.</span>
+            </h1>
+
+            <p class="hero-text">
+                Freshly brewed coffee, delicious food and a cozy atmosphere
+                made for memorable moments.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="primary-btn">Explore Menu</a>
+                <a href="#about" class="secondary-btn">Discover More</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about section">
+
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
+                alt="Cafe Interior">
+        </div>
+
+        <div class="about-content">
+
+            <p class="section-label">OUR STORY</p>
+
+            <h2>
+                More Than Just
+                <span>A Cup of Coffee</span>
+            </h2>
+
+            <p>
+                Brew & Bite is a cozy café created for coffee lovers,
+                food enthusiasts and people who enjoy good conversations.
+            </p>
+
+            <p>
+                From carefully selected coffee beans to freshly prepared
+                meals, every item is made with quality and passion.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <span>☕</span>
+                    <div>
+                        <h3>Premium Coffee</h3>
+                        <p>Freshly brewed with carefully selected beans.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span>🥐</span>
+                    <div>
+                        <h3>Fresh Food</h3>
+                        <p>Delicious meals prepared with fresh ingredients.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu" class="menu section">
+
+        <div class="section-heading">
+
+            <p class="section-label">OUR SPECIALS</p>
+
+            <h2>Popular From Our Menu</h2>
+
+            <p>
+                Enjoy our carefully crafted selection of coffee,
+                food and desserts.
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+
+                <div class="menu-icon">☕</div>
+
+                <h3>Cappuccino</h3>
+
+                <p>
+                    Rich espresso blended with steamed milk and
+                    creamy foam.
+                </p>
+
+                <div class="price">₹149</div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <div class="menu-icon">🍕</div>
+
+                <h3>Cheese Pizza</h3>
+
+                <p>
+                    Crispy crust topped with delicious cheese
+                    and fresh herbs.
+                </p>
+
+                <div class="price">₹249</div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <div class="menu-icon">🍔</div>
+
+                <h3>Classic Burger</h3>
+
+                <p>
+                    Juicy veggie patty with fresh vegetables
+                    and special sauce.
+                </p>
+
+                <div class="price">₹199</div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <div class="menu-icon">🍰</div>
+
+                <h3>Chocolate Cake</h3>
+
+                <p>
+                    Soft and delicious chocolate cake with
+                    creamy chocolate frosting.
+                </p>
+
+                <div class="price">₹179</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY US ================= -->
+
+    <section class="why-us">
+
+        <div class="section-heading">
+
+            <p class="section-label">WHY CHOOSE US</p>
+
+            <h2>Made With Love, Served With Care</h2>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <span>🌱</span>
+                <h3>Fresh Ingredients</h3>
+                <p>
+                    We use fresh and quality ingredients in every dish.
+                </p>
+            </div>
+
+
+            <div class="why-card">
+                <span>👨‍🍳</span>
+                <h3>Expert Chefs</h3>
+                <p>
+                    Our dishes are prepared by passionate food lovers.
+                </p>
+            </div>
+
+
+            <div class="why-card">
+                <span>❤️</span>
+                <h3>Cozy Atmosphere</h3>
+                <p>
+                    A comfortable place to relax, work and connect.
+                </p>
+            </div>
+
+
+            <div class="why-card">
+                <span>⭐</span>
+                <h3>Great Experience</h3>
+                <p>
+                    We focus on creating memorable café experiences.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery" class="gallery section">
+
+        <div class="section-heading">
+
+            <p class="section-label">OUR GALLERY</p>
+
+            <h2>A Glimpse Of Brew & Bite</h2>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Coffee">
+
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80" alt="Cafe Food">
+
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Cafe">
+
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Cafe Interior">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div>
+
+            <p class="section-label">YOUR TABLE AWAITS</p>
+
+            <h2>Ready For Your Next Coffee Break?</h2>
+
+            <p>
+                Come visit us and enjoy great coffee, delicious food
+                and unforgettable moments.
+            </p>
+
+            <a href="#contact" class="primary-btn">Reserve Your Table</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact section">
+
+        <div class="contact-info">
+
+            <p class="section-label">GET IN TOUCH</p>
+
+            <h2>Visit Brew & Bite</h2>
+
+            <p>
+                We'd love to welcome you! Visit us for your favorite
+                coffee and delicious food.
+            </p>
+
+            <div class="contact-item">
+                <span>📍</span>
+                <div>
+                    <h3>Address</h3>
+                    <p>123 Coffee Street, New Delhi, India</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>📞</span>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>✉️</span>
+                <div>
+                    <h3>Email</h3>
+                    <p>hello@brewandbite.com</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <h2>Book a Table</h2>
+
+            <form>
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <input type="tel" placeholder="Phone Number" required>
+
+                <input type="date" required>
+
+                <textarea
+                    placeholder="Your Message"
+                    rows="5"></textarea>
+
+                <button type="submit" class="primary-btn">
+                    Send Reservation
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h2>☕ Brew & Bite</h2>
+                <p>
+                    Coffee, food and good vibes — all in one place.
+                </p>
+            </div>
+
+            <div class="social">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Brew & Bite Café. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js">// Reservation form
+document.querySelector(".contact-form form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your table reservation request has been received.");
+
+    this.reset();
+
+});</script>
+
+</body>
+</html>
